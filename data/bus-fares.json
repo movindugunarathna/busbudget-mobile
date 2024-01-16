@@ -1,0 +1,32 @@
+[
+    {
+        "index": 0,
+        "fare": 0.00,
+        "city": "Colombo"
+    },
+    {
+        "index": 1,
+        "fare": 30.00,
+        "city": "Maligawaththa"
+    },
+    {
+        "index": 2,
+        "fare": 38.00,
+        "city": "Kelanithissa"
+    },
+    {
+        "index": 3,
+        "fare": 50.00,
+        "city": "4 Kanuwa / Biyagama road"
+    },
+    {
+        "index": 4,
+        "fare": 61.00,
+        "city": "Thorana Junction"
+    },
+    {
+        "index": 5,
+        "fare": 73.00,
+        "city": "Kelaniya University"
+    }
+]
