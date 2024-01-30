@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Pressable } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import data from '../data/bus-fares.json';
 
@@ -17,16 +17,23 @@ const App = () => {
   let fareIndex = (destinationIndex ?? 0) - (startingPointIndex ?? 0);
   let calculatedFare = data.find((item: any) => item.index === fareIndex)?.fare || 0;
 
-  const handleStartingPointChange = (event: any) => {
-    setStartingPoint(event.target.value);
+  const handleStartingPointChange = (item: any) => {
+    setStartingPoint(item);
   };
 
-  const handleDestinationChange = (event: any) => {
-    setDestination(event.target.value);
+  const handleDestinationChange = (item: any) => {
+    setDestination(item);
+  };
+
+  const resetState = () => {
+    setDestination(null);
+    setStartingPoint(null);
+    calculatedFare = 0;
   };
 
   return (
     <View style={styles.container}>
+      <Text style={styles.label}>Starting point:</Text>
       <Dropdown
         style={styles.dropdown}
         placeholderStyle={styles.placeholderStyle}
@@ -37,14 +44,15 @@ const App = () => {
         search
         maxHeight={300}
         labelField="label"
-        valueField="value"
+        valueField="label"
         placeholder={'Select Starting point'}
         searchPlaceholder="Starting point"
         onChange={(item: any) => {
           setStartingPoint(item.label);
-          handleStartingPointChange;
+          handleStartingPointChange; // Pass the selected item to the event handler
         }}
       />
+      <Text style={styles.label}>Dstination:</Text>
       <Dropdown
         style={styles.dropdown}
         placeholderStyle={styles.placeholderStyle}
@@ -55,7 +63,7 @@ const App = () => {
         search
         maxHeight={300}
         labelField="label"
-        valueField="value"
+        valueField="label"
         placeholder={'Select Destination'}
         searchPlaceholder="Destination"
         onChange={(item: any) => {
@@ -63,6 +71,8 @@ const App = () => {
           handleDestinationChange;
         }}
       />
+
+      <Text style={styles.label}>Route Number:</Text>
       <Dropdown
         style={styles.dropdown}
         placeholderStyle={styles.placeholderStyle}
@@ -73,12 +83,16 @@ const App = () => {
         search
         maxHeight={300}
         labelField="label"
-        valueField="value"
-        placeholder={'001'}
+        valueField="label"
+        placeholder={'001 Colombo - Kandy'}
         searchPlaceholder="Route Number"
-        onChange={(item: any) => {}}
+        onChange={() => {}}
       />
-      <Text style={styles.fareLabel}>Bus fare: {calculatedFare}</Text>
+      <Text style={styles.fareLabel}>Fare is Rs. {calculatedFare}</Text>
+
+      <Pressable onPress={resetState} style={styles.resetButton}>
+        <Text style={styles.text}>Reset</Text>
+      </Pressable>
     </View>
   );
 };
@@ -87,6 +101,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     padding: 16,
+    flex: 1,
+    justifyContent: 'center',
   },
   dropdown: {
     height: 50,
@@ -113,10 +129,30 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   fareLabel: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'black',
     marginTop: 16,
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'black',
+    marginBottom: 8,
+  },
+  resetButton: {
+    backgroundColor: 'red',
+    padding: 10,
+    borderRadius: 4,
+    marginTop: 16,
+    alignSelf: 'flex-end',
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
   },
 });
 

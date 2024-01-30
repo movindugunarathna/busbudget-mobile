@@ -28,5 +28,80 @@
         "index": 5,
         "fare": 73.00,
         "city": "Kelaniya University"
+    },
+    {
+        "index": 6,
+        "fare": 85.00,
+        "city": "Kiribathgoda"
+    },
+    {
+        "index": 7,
+        "fare": 96.00,
+        "city": "Mahara Junction"
+    },
+    {
+        "index": 8,
+        "fare": 99.00,
+        "city": "Kadawatha"
+    },
+    {
+        "index": 9,
+        "fare": 107.00,
+        "city": "Gonahena Junction"
+    },
+    {
+        "index": 10,
+        "fare": 115.00,
+        "city": "Indigahamula Junction"
+    },
+    {
+        "index": 11,
+        "fare": 122.00,
+        "city": "Kirillawala"
+    },
+    {
+        "index": 12,
+        "fare": 128.00,
+        "city": "Trackmo Junction"
+    },
+    {
+        "index": 13,
+        "fare": 136.00,
+        "city": "Mudungoda"
+    },
+    {
+        "index": 14,
+        "fare": 143.00,
+        "city": "Miriswatta"
+    },
+    {
+        "index": 15,
+        "fare": 149.00,
+        "city": "Yakkala"
+    },
+    {
+        "index": 16,
+        "fare": 155.00,
+        "city": "Aluthgama"
+    },
+    {
+        "index": 17,
+        "fare": 163.00,
+        "city": "Kalagedihena"
+    },
+    {
+        "index": 18,
+        "fare": 168.00,
+        "city": "Thihariya"
+    },
+    {
+        "index": 19,
+        "fare": 176.00,
+        "city": "Nittambuwa Sanghabodhi Maha Vidyalaya"
+    },
+    {
+        "index": 20,
+        "fare": 182.00,
+        "city": "Nittambuwa"
     }
 ]
