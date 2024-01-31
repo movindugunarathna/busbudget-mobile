@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View, StyleSheet, Text, Pressable } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import data from '../data/bus-fares.json';
@@ -7,12 +7,12 @@ const App = () => {
   const [startingPoint, setStartingPoint] = useState(null);
   const [destination, setDestination] = useState(null);
 
-  const options = data.map((item: any, index: any) => {
-    return { label: item.city, value: (index + 1).toString() };
+  const options = data.map((item: any) => {
+    return { label: item.city, value: item.index };
   });
 
-  let startingPointIndex = data.find((item: any) => item.city === startingPoint)?.index;
-  let destinationIndex = data.find((item: any) => item.city === destination)?.index;
+  let startingPointIndex = data.find((item: any) => item.index === (startingPoint as any))?.index;
+  let destinationIndex = data.find((item: any) => item.index === (destination as any)?.value)?.index;
 
   let fareIndex = (destinationIndex ?? 0) - (startingPointIndex ?? 0);
   let calculatedFare = data.find((item: any) => item.index === fareIndex)?.fare || 0;
@@ -26,6 +26,7 @@ const App = () => {
   };
 
   const resetState = () => {
+    console.log(startingPoint, destination);
     setDestination(null);
     setStartingPoint(null);
     calculatedFare = 0;
@@ -44,15 +45,14 @@ const App = () => {
         search
         maxHeight={300}
         labelField="label"
-        valueField="label"
+        valueField="value"
         placeholder={'Select Starting point'}
         searchPlaceholder="Starting point"
-        onChange={(item: any) => {
-          setStartingPoint(item.label);
-          handleStartingPointChange; // Pass the selected item to the event handler
-        }}
+        value={startingPoint}
+        onChange={handleStartingPointChange}
       />
-      <Text style={styles.label}>Dstination:</Text>
+
+      <Text style={styles.label}>Destination:</Text>
       <Dropdown
         style={styles.dropdown}
         placeholderStyle={styles.placeholderStyle}
@@ -63,13 +63,11 @@ const App = () => {
         search
         maxHeight={300}
         labelField="label"
-        valueField="label"
+        valueField="value"
         placeholder={'Select Destination'}
         searchPlaceholder="Destination"
-        onChange={(item: any) => {
-          setDestination(item.label);
-          handleDestinationChange;
-        }}
+        value={destination}
+        onChange={handleDestinationChange}
       />
 
       <Text style={styles.label}>Route Number:</Text>

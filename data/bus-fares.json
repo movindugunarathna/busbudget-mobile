@@ -101,7 +101,207 @@
     },
     {
         "index": 20,
-        "fare": 182.00,
+        "fare": "182.00",
         "city": "Nittambuwa"
+    },
+    {
+        "index": 21,
+        "fare": "189.00",
+        "city": "Kalalpitiya"
+    },
+    {
+        "index": 22,
+        "fare": "195.00",
+        "city": "Pasyala"
+    },
+    {
+        "index": 23,
+        "fare": "203.00",
+        "city": "Kajugama"
+    },
+    {
+        "index": 24,
+        "fare": "209.00",
+        "city": "Radawadunna"
+    },
+    {
+        "index": 25,
+        "fare": "216.00",
+        "city": "Weweldeniya"
+    },
+    {
+        "index": 26,
+        "fare": "222.00",
+        "city": "Danowita"
+    },
+    {
+        "index": 27,
+        "fare": "230.00",
+        "city": "Dummaladeniya"
+    },
+    {
+        "index": 28,
+        "fare": "235.00",
+        "city": "Warakapola"
+    },
+    {
+        "index": 29,
+        "fare": "243.00",
+        "city": "Ambepussa"
+    },
+    {
+        "index": 30,
+        "fare": "251.00",
+        "city": "Mahena"
+    },
+    {
+        "index": 31,
+        "fare": "256.00",
+        "city": "Tholangamuwa"
+    },
+    {
+        "index": 32,
+        "fare": "264.00",
+        "city": "Gasnawa waththa Junction"
+    },
+    {
+        "index": 33,
+        "fare": "270.00",
+        "city": "Nelumdeniya"
+    },
+    {
+        "index": 34,
+        "fare": "277.00",
+        "city": "Batapothella Kandauda"
+    },
+    {
+        "index": 35,
+        "fare": "283.00",
+        "city": "Siyambalapitiya"
+    },
+    {
+        "index": 36,
+        "fare": "291.00",
+        "city": "Ballapana Junction"
+    },
+    {
+        "index": 37,
+        "fare": "297.00",
+        "city": "Galigamuwa"
+    },
+    {
+        "index": 38,
+        "fare": "304.00",
+        "city": "Ambanpitiya"
+    },
+    {
+        "index": 39,
+        "fare": "310.00",
+        "city": "Ranwala Junction"
+    },
+    {
+        "index": 40,
+        "fare": "318.00",
+        "city": "Kegalle"
+    },
+    {
+        "index": 41,
+        "fare": "323.00",
+        "city": "Mipitiya"
+    },
+    {
+        "index": 42,
+        "fare": "Karandupona",
+        "city": "331.00"
+    },
+    {
+        "index": 43,
+        "fare": "337.00",
+        "city": "Molagoda"
+    },
+    {
+        "index": 44,
+        "fare": "344.00",
+        "city": "Mangalagama"
+    },
+    {
+        "index": 45,
+        "fare": "350.00",
+        "city": "Uthuwankanda"
+    },
+    {
+        "index": 46,
+        "fare": "358.00",
+        "city": "Anwarama"
+    },
+    {
+        "index": 47,
+        "fare": "364.00",
+        "city": "Mawanella"
+    },
+    {
+        "index": 48,
+        "fare": "371.00",
+        "city": "Beligammana"
+    },
+    {
+        "index": 49,
+        "fare": "377.00",
+        "city": "Hingula"
+    },
+    {
+        "index": 50,
+        "fare": "385.00",
+        "city": "Ganethanna"
+    },
+    {
+        "index": 51,
+        "fare": "390.00",
+        "city": "Pahala Kadugannawa"
+    },
+    {
+        "index": 52,
+        "fare": "398.00",
+        "city": "Kadugannawa"
+    },
+    {
+        "index": 53,
+        "fare": "404.00",
+        "city": "Henawala (Hospital Road)"
+    },
+    {
+        "index": 54,
+        "fare": "411.00",
+        "city": "Pilimathalawa"
+    },
+    {
+        "index": 55,
+        "fare": "419.00",
+        "city": "Ambilmeegama"
+    },
+    {
+        "index": 56,
+        "fare": "425.00",
+        "city": "Kiribathkumbura"
+    },
+    {
+        "index": 57,
+        "fare": "432.00",
+        "city": "Peradeniya"
+    },
+    {
+        "index": 58,
+        "fare": "438.00",
+        "city": "Gatambe"
+    },
+    {
+        "index": 59,
+        "fare": "446.00",
+        "city": "Mulgampola"
+    },
+    {
+        "index": 60,
+        "fare": "452.00",
+        "city": "Kandy"
     }
 ]
