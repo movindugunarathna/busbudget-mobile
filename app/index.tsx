@@ -11,10 +11,7 @@ const App = () => {
     return { label: item.city, value: item.index };
   });
 
-  let startingPointIndex = data.find((item: any) => item.index === (startingPoint as any))?.index;
-  let destinationIndex = data.find((item: any) => item.index === (destination as any)?.value)?.index;
-
-  let fareIndex = (destinationIndex ?? 0) - (startingPointIndex ?? 0);
+  let fareIndex = (destination as any)?.value - (startingPoint as any)?.value;
   let calculatedFare = data.find((item: any) => item.index === fareIndex)?.fare || 0;
 
   const handleStartingPointChange = (item: any) => {
@@ -26,7 +23,6 @@ const App = () => {
   };
 
   const resetState = () => {
-    console.log(startingPoint, destination);
     setDestination(null);
     setStartingPoint(null);
     calculatedFare = 0;
