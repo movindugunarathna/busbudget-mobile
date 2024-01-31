@@ -16,13 +16,13 @@ Since this is a prototype, it currently supports only the 001 route.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/colombo-bus-fare-calculator.git
+    git clone https://github.com/movindugunarathna/busbudget-mobile.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd colombo-bus-fare-calculator
+    cd busbudget-mobile
     ```
 
 3. Open the application and input the required information.
@@ -35,18 +35,9 @@ Since this is a prototype, it currently supports only the 001 route.
 - Integration with real-time transportation data.
 - Improved user interface and experience.
 
-## Contributing
-
-Contributions are welcome! Please follow the [Contribution Guidelines](CONTRIBUTING.md) for more details.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- Special thanks to [Your Name] for their contributions to this project.
-- Hat tip to anyone whose code was used.
 
 ---
 
