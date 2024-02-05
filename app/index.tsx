@@ -12,7 +12,7 @@ const App = () => {
   });
 
   let fareIndex = (destination as any)?.value - (startingPoint as any)?.value;
-  let calculatedFare = data.find((item: any) => item.index === fareIndex)?.fare || 0;
+  let calculatedFare = data.find((item: any) => item.index === Math.abs(fareIndex))?.fare || 0;
 
   const handleStartingPointChange = (item: any) => {
     setStartingPoint(item);
