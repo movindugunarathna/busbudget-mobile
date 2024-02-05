@@ -1,7 +1,5 @@
 # BusBudget
 
-Designed to streamline the process of determining bus fares for users within the Colombo District, Sri Lanka. This application provides accurate fare calculations based on user inputs such as starting point, destination, and bus route.
-
 ## Features
 
 - Accurate fare calculations for the Colombo District, Sri Lanka.
