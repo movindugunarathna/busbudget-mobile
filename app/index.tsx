@@ -6,9 +6,14 @@ import data from '../data/bus-fares.json';
 const App = () => {
   const [startingPoint, setStartingPoint] = useState(null);
   const [destination, setDestination] = useState(null);
+  const [routeNumber, setRouteNumber] = useState(null);
 
   const options = data.map((item: any) => {
     return { label: item.city, value: item.index };
+  });
+
+  const routes = data.map((item: any) => {
+    return { label: item.route, value: item.route };
   });
 
   let fareIndex = (destination as any)?.value - (startingPoint as any)?.value;
