@@ -6,18 +6,26 @@ import data from '../data/bus-fares.json';
 const App = () => {
   const [startingPoint, setStartingPoint] = useState(null);
   const [destination, setDestination] = useState(null);
-  const [routeNumber, setRouteNumber] = useState(null);
+  const [routeNumber, setRouteNumber] = useState<string | null>(null);
 
-  const options = data.map((item: any) => {
-    return { label: item.city, value: item.index };
-  });
-
-  const routes = data.map((item: any) => {
-    return { label: item.route, value: item.route };
+  const keys = data.map((item) => Object.keys(item));
+  const cities = data.flatMap((item: any) => {
+    if (routeNumber !== null) {
+      return item[routeNumber].map((subItem: any) => ({ label: subItem.city, value: subItem.index }));
+    }
   });
 
   let fareIndex = (destination as any)?.value - (startingPoint as any)?.value;
-  let calculatedFare = data.find((item: any) => item.index === Math.abs(fareIndex))?.fare || 0;
+  let calculatedFare = 0;
+  data.forEach((item: any) => {
+    const keys = data.map((item) => Object.keys(item)[0]);
+
+    const foundItem = item[Object.keys(item)[0]].find((subItem: any) => subItem.index === Math.abs(fareIndex));
+
+    if (foundItem) {
+      calculatedFare = foundItem.fare;
+    }
+  });
 
   const handleStartingPointChange = (item: any) => {
     setStartingPoint(item);
@@ -30,11 +38,25 @@ const App = () => {
   const resetState = () => {
     setDestination(null);
     setStartingPoint(null);
+    setRouteNumber(null);
     calculatedFare = 0;
   };
 
   return (
     <View style={styles.container}>
+      <Text style={styles.label}>Route Number:</Text>
+      <Dropdown
+        style={styles.dropdown}
+        data={keys}
+        search
+        searchPlaceholder="Search route"
+        labelField="label"
+        valueField="value"
+        placeholder="Select a route"
+        value={routeNumber}
+        onChange={(item) => setRouteNumber(item.value)}
+      />
+
       <Text style={styles.label}>Starting point:</Text>
       <Dropdown
         style={styles.dropdown}
@@ -42,7 +64,7 @@ const App = () => {
         selectedTextStyle={styles.selectedTextStyle}
         inputSearchStyle={styles.inputSearchStyle}
         iconStyle={styles.iconStyle}
-        data={options}
+        data={cities}
         search
         maxHeight={300}
         labelField="label"
@@ -60,7 +82,7 @@ const App = () => {
         selectedTextStyle={styles.selectedTextStyle}
         inputSearchStyle={styles.inputSearchStyle}
         iconStyle={styles.iconStyle}
-        data={options}
+        data={cities}
         search
         maxHeight={300}
         labelField="label"
@@ -71,22 +93,6 @@ const App = () => {
         onChange={handleDestinationChange}
       />
 
-      <Text style={styles.label}>Route Number:</Text>
-      <Dropdown
-        style={styles.dropdown}
-        placeholderStyle={styles.placeholderStyle}
-        selectedTextStyle={styles.selectedTextStyle}
-        inputSearchStyle={styles.inputSearchStyle}
-        iconStyle={styles.iconStyle}
-        data={[]}
-        search
-        maxHeight={300}
-        labelField="label"
-        valueField="label"
-        placeholder={'001 Colombo - Kandy'}
-        searchPlaceholder="Route Number"
-        onChange={() => {}}
-      />
       <Text style={styles.fareLabel}>Fare is Rs. {calculatedFare}</Text>
 
       <Pressable onPress={resetState} style={styles.resetButton}>
